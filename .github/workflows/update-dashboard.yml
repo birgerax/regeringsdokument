@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  # Tillåt manuell körning
 
 permissions:
-  contents: write  # <-- Lägger till skriv-rättigheter till repo
+  contents: write  # Ger skriv-rättigheter till repo
 
 jobs:
   update:
@@ -33,4 +33,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add index.html
           git diff --staged --quiet || git commit -m "Auto-update dashboard"
+          git pull --rebase
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
