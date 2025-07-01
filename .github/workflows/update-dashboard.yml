@@ -5,6 +5,9 @@ on:
     - cron: '0 6 * * *'  # Kör 06:00 varje dag
   workflow_dispatch:  # Tillåt manuell körning
 
+permissions:
+  contents: write  # <-- Lägger till skriv-rättigheter till repo
+
 jobs:
   update:
     runs-on: ubuntu-latest
