@@ -611,10 +611,10 @@ def create_complete_dashboard():
     """
     
     # Spara HTML-filen
-    with open('regeringsdokument_komplett_dashboard.html', 'w', encoding='utf-8') as f:
+    with open('index.html', 'w', encoding='utf-8') as f:
         f.write(html_content)
     
-    print("\nKomplett dashboard skapad: regeringsdokument_komplett_dashboard.html")
+    print("\nKomplett dashboard skapad: index.html")
     print("\nStatistik:")
     print(f"- Totalt antal dokument: {len(alla_dokument)}")
     print(f"  - Kommittédirektiv: {len(kd_lista)}")
